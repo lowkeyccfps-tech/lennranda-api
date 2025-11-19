@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+
+// Use port 3000 by default or Vercel's port
 const port = process.env.PORT || 3000;
 
 app.get('/api', (req, res) => {
@@ -12,10 +14,10 @@ app.get('/api', (req, res) => {
   res.json({ message: `Olá, seu número da sorte é: ${numero}` });
 });
 
-// Only listen when running locally (Termux)
+// LOCAL SERVER (needed for Termux)
 if (!process.env.VERCEL) {
-  app.listen(port, () => {
-    console.log(`API rodando em http://localhost:${port}`);
+  app.listen(port, "0.0.0.0", () => {
+    console.log(`API rodando em http://0.0.0.0:${port}`);
   });
 }
 
