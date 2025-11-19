@@ -1,0 +1,1 @@
+{"name": "lennranda-api","version": "1.0.0","description": "API to serve server lists for the Lennranda Roblox GUI","main": "api/index.js","scripts": {"start": "node api/index.js"},"dependencies": {"express": "^4.19.2","cors": "^2.8.5","@vercel/kv": "^1.0.1"}}
